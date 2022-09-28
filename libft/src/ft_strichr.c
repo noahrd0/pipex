@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_strichr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: noahrd0 <noahrd0@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 12:14:43 by noahrd0           #+#    #+#             */
-/*   Updated: 2022/09/27 16:58:52 by noahrd0          ###   ########.fr       */
+/*   Created: 2022/09/28 13:06:12 by noahrd0           #+#    #+#             */
+/*   Updated: 2022/09/28 13:37:31 by noahrd0          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "../includes/libft.h"
 
-/* libraries */
-# include "../libft/includes/libft.h"
-# include <fcntl.h>
+int	ft_strichr(char *s, int c)
+{
+	int	i;
 
-// # include <string.h>
-// # include <time.h>
-// # include <sys/types.h>
-# include <sys/wait.h>
-
-/* define */
-# define INFILE 0
-# define OUTFILE 1
-# define PATHFILE 2
-
-#endif
+	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	if (s[i] == c)
+		return (i);
+	return (-1);
+}

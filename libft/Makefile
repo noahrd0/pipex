@@ -33,7 +33,9 @@ SRC_NAME =	ft_atoi.c 				\
 			ft_putstr_fd.c 			\
 			ft_split.c 				\
 			ft_strchr.c 			\
+			ft_strcjoin.c			\
 			ft_strdup.c 			\
+			ft_strichr.c			\
 			ft_striteri.c 			\
 			ft_strjoin.c 			\
 			ft_strlcat.c 			\
@@ -41,6 +43,7 @@ SRC_NAME =	ft_atoi.c 				\
 			ft_strlen.c 			\
 			ft_strmapi.c 			\
 			ft_strncmp.c 			\
+			ft_strndup.c			\
 			ft_strnstr.c 			\
 			ft_strrchr.c			\
 			ft_strtrim.c 			\

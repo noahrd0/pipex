@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: noahrd0 <noahrd0@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 12:14:43 by noahrd0           #+#    #+#             */
-/*   Updated: 2022/09/27 16:58:52 by noahrd0          ###   ########.fr       */
+/*   Created: 2022/09/28 13:18:36 by noahrd0           #+#    #+#             */
+/*   Updated: 2022/09/28 13:39:39 by noahrd0          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "../includes/libft.h"
 
-/* libraries */
-# include "../libft/includes/libft.h"
-# include <fcntl.h>
+char *ft_strndup(char *str, unsigned int n)
+{
+	char *dup;
+	unsigned int i;
 
-// # include <string.h>
-// # include <time.h>
-// # include <sys/types.h>
-# include <sys/wait.h>
-
-/* define */
-# define INFILE 0
-# define OUTFILE 1
-# define PATHFILE 2
-
-#endif
+	i = 0;
+	dup = malloc(sizeof(char) * n + 1);
+	if (!dup)
+	{
+		ft_putendl_fd("[>]	An error occured in ft_strndup", 2);
+		free(dup);
+		exit(1);
+	}
+	while (i < n)
+		dup[i++] = *str++;
+	dup[n] = '\0';
+	return (dup);
+}

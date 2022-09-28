@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_strcjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: noahrd0 <noahrd0@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 12:14:43 by noahrd0           #+#    #+#             */
-/*   Updated: 2022/09/27 16:58:52 by noahrd0          ###   ########.fr       */
+/*   Created: 2022/09/28 13:53:17 by noahrd0           #+#    #+#             */
+/*   Updated: 2022/09/28 14:03:19 by noahrd0          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "../includes/libft.h"
 
-/* libraries */
-# include "../libft/includes/libft.h"
-# include <fcntl.h>
+char	*ft_strcjoin (char *s1, char *s2, int c)
+{
+	char	*joined;
+	int		i;
+	int		j;
 
-// # include <string.h>
-// # include <time.h>
-// # include <sys/types.h>
-# include <sys/wait.h>
-
-/* define */
-# define INFILE 0
-# define OUTFILE 1
-# define PATHFILE 2
-
-#endif
+	joined = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 2));
+	i = 0;
+	j = 0;
+	while (s1[j])
+		joined[i++] = s1[j++];
+	joined[i++] = c;
+	j = 0;
+	while (s2[j])
+		joined[i++] = s2[j++];
+	joined[i] = 0;
+	return (joined);
+}
