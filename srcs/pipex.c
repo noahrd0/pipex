@@ -6,7 +6,7 @@
 /*   By: noahrd0 <noahrd0@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 11:25:04 by noahrd0           #+#    #+#             */
-/*   Updated: 2022/09/28 17:15:23 by noahrd0          ###   ########.fr       */
+/*   Updated: 2022/09/28 17:19:40 by noahrd0          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,6 +153,7 @@ int	main(int ac, char **av, char **envp)
 		exit_error("number of arguments", 2);
 	return (0);
 }
+
 
 /*int	execution(char **av, int *pipe_fd, pid_t pid, char **envp)
 {
