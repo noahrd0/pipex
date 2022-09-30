@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipi.c                                             :+:      :+:    :+:   */
+/*   pipex.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nradal <nradal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 01:18:45 by nradal            #+#    #+#             */
-/*   Updated: 2022/09/30 01:38:16 by nradal           ###   ########.fr       */
+/*   Updated: 2022/09/30 02:18:53 by nradal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ int	infile_process(char **av, int *pipe_fd, char **envp, char *path, char **cmds
 				if (dup2(pipe_fd[1], STDOUT_FILENO) != -1)
 					if (close(infile_fd) != -1)
 						if (close(pipe_fd[1]) != -1)
-							return (execve(path, cmds, envp));
+							(execve(path, cmds, envp));
 		leave_clean(cmds, path);
 		exit_error("error in infile_process", 2);
 		return(-1);
@@ -156,18 +156,15 @@ int	outfile_process(char **av, int *pipe_fd, char **envp, char *path, char **cmd
 				if (dup2(pipe_fd[0], STDIN_FILENO) != -1)
 					if (close(outfile_fd) != -1)
 						if (close(pipe_fd[0]) != -1)
-							return (execve(path, cmds, envp));
+							(execve(path, cmds, envp));
 		leave_clean(cmds, path);
-		return(-1);
+		exit(0);
 	}
 	close(pipe_fd[0]);
 	close(pipe_fd[1]);
-	if (waitpid(pid, NULL, 0) == -1)
-	{
-		leave_clean(cmds, path);
-		exit_error("waitpid in infile", 2);
-	}
 	leave_clean(cmds, path);
+	if (waitpid(pid, NULL, 0) == -1)
+		exit_error("waitpid in infile", 2);
 	return (EXIT_SUCCESS);
 }
 
@@ -180,6 +177,8 @@ int	outfile_process(char **av, int *pipe_fd, char **envp, char *path, char **cmd
 	// }
 	// leave_clean(cmds, path);
 	// return (EXIT_SUCCESS);
+
+// ! WRONG INFILE = LEAKS
 
 int	main(int ac, char **av, char **envp)
 {
