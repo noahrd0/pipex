@@ -13,7 +13,10 @@ OBJ_PATH = ./objs/
 INC_DIR = ./includes/
 
 #	SRC
-SRC_NAME =	pipex.c
+SRC_NAME =	pipex.c			\
+			child_process.c	\
+			error_free.c	\
+			utils.c
 OBJ_NAME = $(SRC_NAME:.c=.o)
 INC_NAME = $(INC_DIR)$(NAME).h
 

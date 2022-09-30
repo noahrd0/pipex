@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noahrd0 <noahrd0@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nradal <nradal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 15:02:56 by noah              #+#    #+#             */
-/*   Updated: 2022/09/27 15:23:48 by noahrd0          ###   ########.fr       */
+/*   Updated: 2022/09/29 23:12:41 by nradal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	**ft_split(char const *s, char c)
 
 	split = malloc((ft_nbr_str(s, c) + 1) * sizeof(char *));
 	if (!s || !split)
-		return (0);
+		return (NULL);
 	i = 0;
 	j = 0;
 	index = -1;
