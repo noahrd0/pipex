@@ -37,12 +37,12 @@ all: $(FT_LIB) $(NAME)
 $(FT_LIB): FORCE
 	@make --no-print-directory -C $(FT)
 
-$(OBJ_PATH)%.o : $(SRC_PATH)%.c
+$(OBJ_PATH)%.o : $(SRC_PATH)%.c $(INC_NAME) $(FT_LIB)
 	@mkdir -p $(OBJ_PATH)
 	@$(CC) -c $< -o $@
 	@echo "$(GREEN)[>]		$@ created.$(NOC)"
 
-$(NAME): $(OBJ) $(INC_NAME)
+$(NAME): $(OBJ)
 	@$(CC) $(OBJ) $(FT_LIB) -o $@
 	@echo "$(GREEN)[>]		$@ created.$(NOC)"
 

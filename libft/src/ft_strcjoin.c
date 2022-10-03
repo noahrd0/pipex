@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noahrd0 <noahrd0@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nradal <nradal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 13:53:17 by noahrd0           #+#    #+#             */
-/*   Updated: 2022/09/28 14:03:19 by noahrd0          ###   ########.fr       */
+/*   Updated: 2022/10/04 00:11:28 by nradal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strcjoin (char *s1, char *s2, int c)
+char	*ft_strcjoin(char *s1, char *s2, int c)
 {
 	char	*joined;
 	int		i;

@@ -52,6 +52,7 @@ SRC_NAME =	ft_atoi.c 				\
 			ft_toupper.c 			
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
+INC_NAME = $(INC_PATH)libft.h
 
 #	FILES
 SRC = $(addprefix $(SRC_PATH),$(SRC_NAME))
@@ -63,7 +64,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(OBJ_PATH)%.o : $(SRC_PATH)%.c
+$(OBJ_PATH)%.o : $(SRC_PATH)%.c $(INC_NAME)
 	@mkdir -p $(OBJ_PATH)
 	@$(CC) -c $< -o $@
 	@echo "$(BLUE)[>]		$@ created.$(NOC)"

@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: noahrd0 <noahrd0@student.42.fr>            +#+  +:+       +#+        */
+/*   By: nradal <nradal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 13:18:36 by noahrd0           #+#    #+#             */
-/*   Updated: 2022/09/28 13:39:39 by noahrd0          ###   ########.fr       */
+/*   Updated: 2022/10/04 00:10:47 by nradal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char *ft_strndup(char *str, unsigned int n)
+char	*ft_strndup(char *str, unsigned int n)
 {
-	char *dup;
-	unsigned int i;
+	char			*dup;
+	unsigned int	i;
 
 	i = 0;
 	dup = malloc(sizeof(char) * n + 1);
